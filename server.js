@@ -1,9 +1,6 @@
 const http = require('http');
 const fs = require('fs');
 
-//это не весь импорт, чек editor.js для понимания
-const editor = require('./editor');
-
 
 let server = http.createServer((req, res) => {
     console.log(req.url);
