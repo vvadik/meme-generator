@@ -1,10 +1,10 @@
 
 // теперь мы можем импортировать файл и editor.js вернет нам функцию editor
 
-let canv=document.getElementById("img"),
-    c=canv.getContext("2d");
 function onfill(doc)
 {
+    let canv=document.getElementById("img"),
+        c=canv.getContext("2d");
     var file=doc.files[0],
         fileread=new FileReader();
     fileread.onload=function()
@@ -23,8 +23,11 @@ function onfill(doc)
     }
     fileread.readAsDataURL(file);
 }
+
 function get()
 {
+    let canv=document.getElementById("img"),
+        c=canv.getContext("2d");
     var link=document.createElement("a");
     link.download="download";
     link.href=canv.toDataURL(["image/png"]);
