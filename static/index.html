@@ -3,11 +3,16 @@
 <head>
     <meta charset="utf-8">
     <title>Test</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="main()">
 <script src="editor.js"></script>
-    <canvas id="cnv" style="border:1px solid #000000"></canvas>
-    <input type="file" onChange="onfill(this)">
-    <input onClick="get()" type="button" value="Создать картинку">
+<canvas id="cnv" style="border:1px solid #000000"></canvas>
+<form id="myForm">
+    <br/>
+    <input type="submit" value="submit"/>
+</form>
+<input type="file" onChange="onfill(this)">
+<input onClick="get()" type="button" value="Создать картинку">
 </body>
 </html>
