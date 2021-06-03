@@ -10,4 +10,5 @@ const server = express();
 // TODO: После выбора или загрузки картинки уметь переходить на страничку с редактингом
 server.use(express.static('static'));
 server.use('/photo', express.static('photo'));
+
 server.listen(800, 'localhost');
