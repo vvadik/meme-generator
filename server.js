@@ -1,5 +1,5 @@
 const express = require('express');
-// import get_pho from './get_photos.js'
+// import get_pho from './Card.js'
 
 const server = express();
 

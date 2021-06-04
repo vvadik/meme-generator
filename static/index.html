@@ -34,6 +34,7 @@
 </head>
 <body class="d-flex h-100 text-center text-white bg-dark">
 <script src="editor.js"></script>
+<script src="Card.js"></script>
 
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
     <header class="mb-auto">
@@ -44,33 +45,21 @@
 
 
 
+    <canvas id="img" style="border:1px solid #000000"></canvas>
     <div class="mb-3 w-50 mx-auto">
-        <canvas id="img" style="border:1px solid #000000"></canvas>
         <input class="form-control form-control-sm" id="formFileSm" type="file" onChange="onfill(this)">
         <input onClick="get()" type="button" value="Создать картинку" class="btn btn-primary">
     </div>
 
 
     <main class="px-3">
+
         <h1>Meme.</h1>
         <p class="lead">Здесь будут картинки</p>
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-            <div class="card text-white bg-dark mb-3">
-                <img src="../photo/824439.700xp.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">M/W</h5>
-                    <a href="#" class="btn btn-primary">Create my own</a>
-                </div>
-            </div>
-            <div class="card text-white bg-dark mb-3">
-                <img src="../photo/file-20170712-14488-19lw3sc.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Yoda</h5>
-                    <a href="#" class="btn btn-primary">Create my own </a>
-                </div>
-            </div>
-        </div>
 
+        <div class="row row-cols-1 row-cols-md-2 g-4" id="cardBlock">
+            <button onclick="generateCard('./photo/ManWoman.jpg')"> Нажми на меня</button>
+        </div>
     </main>
 
     <footer class="mt-auto text-white-50">
