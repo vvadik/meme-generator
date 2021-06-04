@@ -39,17 +39,17 @@
     <header class="mb-auto">
         <div>
             <h3 class="float-md-start mb-0">Meme-generator</h3>
-            <nav class="nav nav-masthead justify-content-center float-md-end">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                <a class="nav-link" href="#">LogIn</a>
-            </nav>
         </div>
     </header>
 
 
-    <canvas id="img" style="border:1px solid #000000"></canvas>
-    <input type="file" onChange="onfill(this)">
-    <input onClick="get()" type="button" value="Создать картинку">
+
+    <div class="mb-3 w-50 mx-auto">
+        <canvas id="img" style="border:1px solid #000000"></canvas>
+        <input class="form-control form-control-sm" id="formFileSm" type="file" onChange="onfill(this)">
+        <input onClick="get()" type="button" value="Создать картинку" class="btn btn-primary">
+    </div>
+
 
     <main class="px-3">
         <h1>Meme.</h1>
@@ -65,7 +65,7 @@
             <div class="card text-white bg-dark mb-3">
                 <img src="../photo/file-20170712-14488-19lw3sc.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">Yoda</h5>
                     <a href="#" class="btn btn-primary">Create my own </a>
                 </div>
             </div>
