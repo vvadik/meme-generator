@@ -7,8 +7,14 @@ function drawImage() {
         const size = sizeSelector.querySelector('input').value;
         const colorPicker = div.querySelector('.colorPicker');
         const color = colorPicker.querySelector('input').value;
-
-        drawTextArea(context, textarea, div.offsetLeft, div.offsetTop, size, color);
+        let x = div.style.left;
+        let y = div.style.top; //todo
+        console.log(textarea);
+        x = parseInt(x.substr(0, x.length-2));
+        y = parseInt(y.substr(0, y.length-2));
+        console.log(x);
+        console.log(y);
+        drawTextArea(context, textarea, x, y, size, color);
         div.remove();
     }
 }

@@ -1,4 +1,5 @@
 const express = require('express');
+// import get_pho from './Card.js'
 
 const server = express();
 
@@ -10,5 +11,10 @@ const server = express();
 // TODO: После выбора или загрузки картинки уметь переходить на страничку с редактингом
 server.use(express.static('static'));
 server.use('/photo', express.static('photo'));
-
+server.use('/photos', function(request, response){
+    let fs = require('fs');
+    let files = fs.readdirSync('./photo/');
+    console.log(files)
+    response.send(files)
+});
 server.listen(800, 'localhost');

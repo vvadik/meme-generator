@@ -4,7 +4,7 @@ function createMemeTextArea(offsetX, offsetY) {
     div.id = getNextMemeTextAreaId().toString();
 
     const closeButton = createCloseButton();
-    const sizeSelector = createSizeSelector(8, 72);
+    const sizeSelector = createSizeSelector(8, 144);
     const colorPicker = createColorPicker();
 
     const newTextArea = document.createElement('textarea');
@@ -22,13 +22,13 @@ function createMemeTextArea(offsetX, offsetY) {
 
     div.style.left = offsetX.toString() + 'px';
     div.style.top = offsetY.toString() + 'px';
-    const form = document.getElementById('myForm');
+    const canvas = document.getElementById('cnv');
     div.appendChild(newTextArea);
     div.appendChild(closeButton);
     div.appendChild(sizeSelector);
     div.appendChild(colorPicker);
 
-    form.appendChild(div);
+    canvas.after(div);
 }
 
 function createCloseButton() {
