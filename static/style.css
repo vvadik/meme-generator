@@ -1,3 +1,19 @@
 .userText {
+    background: transparent;
+}
+
+.sizeLabel {
+    background-color: white;
+}
+
+.colorLabel {
+    background-color: white;
+}
+
+.removeMemeTextButton {
+    position: absolute;
+}
+
+.memeText {
     position: absolute;
 }

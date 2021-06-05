@@ -6,13 +6,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body onload="main()">
-<script src="editor.js"></script>
+<script src="editor/editor.js"></script>
+<script src="editor/textInput.js"></script>
+<script src="editor/drawer.js"></script>
 <canvas id="cnv" style="border:1px solid #000000"></canvas>
 <form id="myForm">
     <br/>
     <input type="submit" value="submit"/>
 </form>
-<input type="file" onChange="onfill(this)">
-<input onClick="get()" type="button" value="Создать картинку">
+<input type="file" onchange="loadFile(this)">
+<input onclick="downloadMeme()" type="button" value="Создать картинку">
 </body>
 </html>
