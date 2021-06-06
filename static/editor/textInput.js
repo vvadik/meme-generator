@@ -11,8 +11,8 @@ function createMemeTextArea(offsetX, offsetY) {
     newTextArea.className = 'userText';
     newTextArea.autofocus = true;
 
-    div.style.left = offsetX.toString() + 'px';
-    div.style.top = offsetY.toString() + 'px';
+    div.style.left = offsetX - 100 + 'px';
+    div.style.top = offsetY - 40 + 'px';
     const canvas = document.getElementById('cnv');
     div.appendChild(newTextArea);
     div.appendChild(closeButton);

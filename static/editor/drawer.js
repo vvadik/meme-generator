@@ -31,7 +31,7 @@ function drawString(ctx, text, posX, posY, textColor = '#000000', font = "Bree S
     ctx.fillStyle = textColor;
     ctx.translate(posX, posY);
     for (let i = 0; i < lines.length; i++) {
-        ctx.fillText(lines[i], 0, i * fontSize);
+        ctx.fillText(lines[i], 0, (i + 1) * fontSize);
     }
     ctx.restore();
 }
