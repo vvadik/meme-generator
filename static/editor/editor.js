@@ -47,7 +47,8 @@ function getNextMemeTextAreaId() {
     return idToCheck;
 }
 
-function main() {
+async function main() {
+    await getBasicPictures(15);
     const canvas = getCanvas();
 
     canvas.addEventListener('dblclick', function (event) {

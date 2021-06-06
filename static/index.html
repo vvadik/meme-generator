@@ -34,9 +34,9 @@
 <script src="editor/editor.js"></script>
 <script src="editor/textInput.js"></script>
 <script src="editor/drawer.js"></script>
-<script src="Card.js"></script>
+<script src="card.js"></script>
 
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+<div class="cover-container d-flex mx-auto flex-column">
     <header class="mb-auto">
         <div>
             <h3 class="float-md-start mb-0">Meme-generator</h3>
@@ -44,17 +44,20 @@
     </header>
 
     <canvas id="cnv" style="border:1px solid #000000"></canvas>
-    <input type="file" class="form-control form-control-sm" id="formFileSm" onchange="loadFile(this)">
-    <input type="button" onclick="drawImage()" value="Нарисовать">
-    <input onclick="downloadMeme()" type="button" value="Скачать" class="btn btn-primary">
+    <div class="mb-3 w-50 mx-auto">
+        <input type="file" class="form-control form-control-sm" id="formFileSm" onchange="loadFile(this)">
+        <input type="button" onclick="drawImage()" value="Нарисовать">
+        <input onclick="downloadMeme()" type="button" value="Скачать" class="btn btn-primary">
+    </div>
 
 
     <main class="px-3">
 
         <h1>Meme.</h1>
         <p class="lead">Здесь будут картинки</p>
+
         <div class="row row-cols-1 row-cols-md-2 g-4" id="cardBlock">
-            <button onclick="generateCard()"> Нажми на меня</button>
+
         </div>
     </main>
 
