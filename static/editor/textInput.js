@@ -4,7 +4,7 @@ function createMemeTextArea(offsetX, offsetY) {
     div.id = getNextMemeTextAreaId().toString();
 
     const closeButton = createCloseButton();
-    const sizeSelector = createSizeSelector(8, 144);
+    const sizeSelector = createSizeSelector(8, 72);
     const colorPicker = createColorPicker();
 
     const newTextArea = document.createElement('textarea');
@@ -27,7 +27,7 @@ function createCloseButton() {
     button.textContent = 'x';
     button.type = 'button';
     button.className = 'removeMemeTextButton';
-    button.addEventListener('click', function (evt) {
+    button.addEventListener('click', function(evt) {
         button.parentElement.remove();
     });
 
@@ -42,7 +42,7 @@ function createSizeSelector(minSize, maxSize, defaultSize = 16) {
     label.className = 'sizeLabel';
     label.htmlFor = 'textSize';
     label.textContent = `Size: ${defaultSize}`;
-    const onChangeRange = function (event) {
+    const onChangeRange = function(event) {
         label.textContent = `Size: ${event.target.value}`;
     }
 
@@ -53,7 +53,7 @@ function createSizeSelector(minSize, maxSize, defaultSize = 16) {
     input.step = '1';
     input.name = 'textSize';
     input.value = defaultSize.toString();
-    input.addEventListener('change',function (event) {
+    input.addEventListener('change', function(event) {
         onChangeRange(event);
         const parentDiv = div.parentElement;
         const textarea = parentDiv.querySelector('.userText');
@@ -71,7 +71,7 @@ function createColorPicker(defaultColor = 'black') {
     const div = document.createElement('div');
     div.className = 'colorPicker';
 
-    const onChangeColor = function (event) {
+    const onChangeColor = function(event) {
         const parentDiv = div.parentElement;
         const textarea = parentDiv.querySelector('.userText');
         textarea.style.color = event.target.value;

@@ -1,5 +1,8 @@
 .userText {
     background: rgba(255, 255, 255, 0.2);
+    resize: both;
+    width: 200px;
+    height: 80px;
 }
 
 .sizeLabel {

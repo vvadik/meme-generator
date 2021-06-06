@@ -11,10 +11,10 @@ function loadFile(doc) {
     const context = getCanvasContext();
     const file = doc.files[0];
     const reader = new FileReader();
-    reader.onload = function (event) {
+    reader.onload = function(event) {
         const img = new Image();
         img.src = event.target.result;
-        img.addEventListener('load', function () {
+        img.addEventListener('load', function() {
             canvas.width = img.width;
             canvas.height = img.height;
             context.drawImage(img, 0, 0);
@@ -48,10 +48,15 @@ function getNextMemeTextAreaId() {
 }
 
 async function main() {
-    await getBasicPictures(12);
+    await getBasicPictures();
     const canvas = getCanvas();
 
-    canvas.addEventListener('dblclick', function (event) {
+
+    const context = getCanvasContext();
+    context.fillStyle = 'white';
+    context.fillRect(0, 0, canvas.width, canvas.height);
+
+    canvas.addEventListener('dblclick', function(event) {
         createMemeTextArea(event.x, event.y);
     });
 }
