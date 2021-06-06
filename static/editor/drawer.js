@@ -24,7 +24,7 @@ function drawImage() {
     }
 }
 
-function drawString(ctx, text, posX, posY, textColor = '#000000', font = "'serif'", fontSize = 16) {
+function drawString(ctx, text, posX, posY, textColor = '#000000', font = "Bree Serif", fontSize = 16) {
     const lines = text.split('\n');
     ctx.save();
     ctx.font = fontSize + 'px ' + font;
@@ -41,5 +41,5 @@ function drawTextArea(context, textarea, x, y, fontSize, textColor) {
     if (text.length === 0) {
         return;
     }
-    drawString(context, text, x, y, textColor, 'Calibri', fontSize);
+    drawString(context, text, x, y, textColor, 'Bree Serif', fontSize);
 }

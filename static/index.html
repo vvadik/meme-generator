@@ -22,25 +22,33 @@
 <script src="editor/drawer.js"></script>
 <script src="card.js"></script>
 
+
+
 <div class="cover-container d-flex mx-auto flex-column">
+
+
     <header class="mb-auto">
         <div>
             <h3 class="float-md-start mb-0">Meme-generator</h3>
         </div>
     </header>
 
-    <canvas id="cnv" style="border:1px solid #000000"></canvas>
+    <div class="alert alert-primary" role="alert">
+        Кликни два раза по картинке, чтобы написать текст
+    </div>
+
+    <canvas id="cnv" style="border:1px solid #000000" width="900" height="450"></canvas>
     <div class="mb-3 w-50 mx-auto">
         <input type="file" class="form-control form-control-sm" id="formFileSm" onchange="loadFile(this)">
-        <input type="button" onclick="drawImage()" value="Нарисовать">
+        <input type="button" onclick="drawImage()" value="Нарисовать" style="z-index: 10" class="btn btn-success">
         <input onclick="downloadMeme()" type="button" value="Скачать" class="btn btn-primary">
     </div>
 
 
+
     <main class="px-3">
 
-        <h1>Meme.</h1>
-        <p class="lead">Здесь будут картинки</p>
+        <h1>Memes</h1>
 
         <div class="row row-cols-1 row-cols-md-2 g-4" id="cardBlock">
 

@@ -25,12 +25,10 @@ function createMemeTextArea(offsetX, offsetY) {
 function createCloseButton() {
     const button = document.createElement('button');
     button.textContent = 'x';
-    button.type = 'button';
-    button.className = 'removeMemeTextButton';
+    button.className = 'removeMemeTextButton btn btn-outline-danger';
     button.addEventListener('click', function(evt) {
         button.parentElement.remove();
     });
-
     return button;
 }
 
