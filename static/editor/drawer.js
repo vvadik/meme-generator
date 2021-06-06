@@ -7,11 +7,11 @@ function drawImage() {
         const size = sizeSelector.querySelector('input').value;
         const colorPicker = div.querySelector('.colorPicker');
         const color = colorPicker.querySelector('input').value;
-        let x = textarea.style.left;
-        let y = textarea.style.top; //todo
+        let x = div.offsetLeft;
+        let y = div.offsetTop; //todo
         console.log(textarea);
-        x = parseInt(x.substr(0, x.length-2));
-        y = parseInt(y.substr(0, y.length-2));
+        //x = parseInt(x.substr(0, x.length - 2));
+        //  y = parseInt(y.substr(0, y.length - 2));
         console.log(x);
         console.log(y);
         const clientRects = context.canvas.getClientRects()[0];
@@ -19,8 +19,8 @@ function drawImage() {
         const scaleY = context.canvas.height / clientRects.height;
         console.log(`${scaleX} ${scaleY}`);
 
-        x = x + clientRects.x;
-        y = y + clientRects.y;
+        x = x - context.canvas.offsetLeft;
+        y = y - context.canvas.offsetTop;
         context.save();
         context.scale(scaleX, scaleY);
         drawTextArea(context, textarea, x, y, size, color);
