@@ -57,6 +57,6 @@ async function main() {
     context.fillRect(0, 0, canvas.width, canvas.height);
 
     canvas.addEventListener('dblclick', function(event) {
-        createMemeTextArea(event.x, event.y);
+        createMemeTextArea(event.pageX, event.pageY);
     });
 }
