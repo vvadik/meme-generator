@@ -32,17 +32,16 @@
     <!-- Custom styles for this template -->
     <link href="cover.css" rel="stylesheet">
 </head>
-<body class="d-flex h-100 text-center text-white bg-dark">
+<body class="d-flex h-100 text-center text-white bg-dark" onload="getBasicPictures(15)">
 <script src="editor.js"></script>
 <script src="Card.js"></script>
 
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+<div class="cover-container d-flex mx-auto flex-column">
     <header class="mb-auto">
         <div>
             <h3 class="float-md-start mb-0">Meme-generator</h3>
         </div>
     </header>
-
 
 
     <canvas id="img" style="border:1px solid #000000"></canvas>
@@ -57,9 +56,7 @@
         <h1>Meme.</h1>
         <p class="lead">Здесь будут картинки</p>
 
-        <div class="row row-cols-1 row-cols-md-2 g-4" id="cardBlock">
-            <button onclick="generateCard()"> Нажми на меня</button>
-        </div>
+        <div class="row row-cols-1 row-cols-md-2 g-4" id="cardBlock"></div>
     </main>
 
     <footer class="mt-auto text-white-50">
