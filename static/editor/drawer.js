@@ -8,19 +8,15 @@ function drawImage() {
         const colorPicker = div.querySelector('.colorPicker');
         const color = colorPicker.querySelector('input').value;
         let x = div.offsetLeft;
-        let y = div.offsetTop; //todo
-        console.log(textarea);
-        //x = parseInt(x.substr(0, x.length - 2));
-        //  y = parseInt(y.substr(0, y.length - 2));
-        console.log(x);
-        console.log(y);
+        let y = div.offsetTop;
+
         const clientRects = context.canvas.getClientRects()[0];
         const scaleX = context.canvas.width / clientRects.width;
         const scaleY = context.canvas.height / clientRects.height;
         console.log(`${scaleX} ${scaleY}`);
 
-        x = x - context.canvas.offsetLeft;
-        y = y - context.canvas.offsetTop;
+        x -= context.canvas.offsetLeft;
+        y -= context.canvas.offsetTop;
         context.save();
         context.scale(scaleX, scaleY);
         drawTextArea(context, textarea, x, y, size, color);
@@ -31,7 +27,6 @@ function drawImage() {
 
 function drawString(ctx, text, posX, posY, textColor, font, fontSize) {
     const lines = text.split("\n");
-    //if (!rotation) rotation = 0;
     if (!font) font = "'serif'";
     if (!fontSize) fontSize = 16;
     if (!textColor) textColor = '#000000';
@@ -39,7 +34,6 @@ function drawString(ctx, text, posX, posY, textColor, font, fontSize) {
     ctx.font = fontSize + "px " + font;
     ctx.fillStyle = textColor;
     ctx.translate(posX, posY);
-    //ctx.rotate(rotation * Math.PI / 180);
     for (let i = 0; i < lines.length; i++) {
         ctx.fillText(lines[i], 0, i * fontSize);
     }

@@ -9,14 +9,6 @@ function createMemeTextArea(offsetX, offsetY) {
 
     const newTextArea = document.createElement('textarea');
     newTextArea.className = 'userText';
-    // newTextArea.addEventListener('blur', function () {
-    //     sizeSelector.style.display = 'none';
-    //     colorPicker.style.display = 'none';
-    // });
-    // div.addEventListener('focusin', function () {
-    //     sizeSelector.style.display = 'inherit';
-    //     colorPicker.style.display = 'inherit';
-    // })
     newTextArea.autofocus = true;
     console.log(`x: ${offsetX} : ${offsetY}`);
 

@@ -1,5 +1,3 @@
-///["ManWoman.jpg","Nike.jpg","yoda.jpg"]
-
 async function generateCard(){
     let listImages = await getPhotoUrl()
 
@@ -31,7 +29,7 @@ async function generateCard(){
 }
 
 async function getListPhotosNames(){
-    let allPhotos = await fetch('./photos')
+    let allPhotos = await fetch('./photos');
     let data = await allPhotos.text()
     data = data.slice(2, -2)  // убрали  [] из строки и пробелы
     data = data.replaceAll('"', '')  // убрали " из строки, получили только слова и ,

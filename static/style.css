@@ -1,13 +1,13 @@
 .userText {
-    background: transparent;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .sizeLabel {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .colorLabel {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .removeMemeTextButton {

@@ -50,11 +50,6 @@ function getNextMemeTextAreaId() {
 function main() {
     const canvas = getCanvas();
 
-    // const myForm = document.getElementById('myForm');
-    // myForm.addEventListener('submit', function (e) {
-    //     drawImage();
-    //     e.preventDefault();
-    // });
     canvas.addEventListener('dblclick', function (event) {
         console.log(event);
         createMemeTextArea(event.x, event.y);
