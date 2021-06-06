@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,58 +10,56 @@
 
     <title>Meme Generator</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
     <link rel="stylesheet" href="cover.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="d-flex h-100 text-center text-white bg-dark" onload="main()">
-<script src="editor/editor.js"></script>
-<script src="editor/textInput.js"></script>
-<script src="editor/drawer.js"></script>
-<script src="card.js"></script>
+    <script src="editor/editor.js"></script>
+    <script src="editor/textInput.js"></script>
+    <script src="editor/drawer.js"></script>
+    <script src="card.js"></script>
 
 
 
-<div class="cover-container d-flex mx-auto flex-column">
+    <div class="cover-container d-flex mx-auto flex-column">
 
 
-    <header class="mb-auto">
-        <div>
-            <h3 class="float-md-start mb-0">Meme-generator</h3>
+        <header class="mb-auto">
+            <div>
+                <h3 class="float-md-start mb-0">Meme-generator</h3>
+            </div>
+        </header>
+
+        <div class="alert alert-primary" role="alert">
+            Кликни два раза по картинке, чтобы написать текст
         </div>
-    </header>
 
-    <div class="alert alert-primary" role="alert">
-        Кликни два раза по картинке, чтобы написать текст
-    </div>
-
-    <canvas id="cnv" style="border:1px solid #000000" width="900" height="450"></canvas>
-    <div class="mb-3 w-50 mx-auto">
-        <input type="file" class="form-control form-control-sm" id="formFileSm" onchange="loadFile(this)">
-        <input type="button" onclick="drawImage()" value="Нарисовать" style="z-index: 10" class="btn btn-success">
-        <input onclick="downloadMeme()" type="button" value="Скачать" class="btn btn-primary">
-    </div>
-
-
-
-    <main class="px-3">
-
-        <h1>Memes</h1>
-
-        <div class="row row-cols-1 row-cols-md-2 g-4" id="cardBlock">
-
+        <canvas id="cnv" style="border:1px solid #000000"></canvas>
+        <div class="mb-3 w-50 mx-auto">
+            <input type="file" class="form-control form-control-sm" id="formFileSm" onchange="loadFile(this)">
+            <input type="button" onclick="drawImage()" value="Нарисовать" style="z-index: 10" class="btn btn-success">
+            <input onclick="downloadMeme()" type="button" value="Скачать" class="btn btn-primary">
         </div>
-    </main>
 
-    <footer class="mt-auto text-white-50">
 
-    </footer>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-        crossorigin="anonymous"></script>
+
+        <main class="px-3">
+
+            <h1>Memes</h1>
+
+            <div class="row row-cols-1 row-cols-md-2 g-4" id="cardBlock">
+
+            </div>
+        </main>
+
+        <footer class="mt-auto text-white-50">
+
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
+
 </html>

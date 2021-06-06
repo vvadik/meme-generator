@@ -17,7 +17,7 @@ function generateCard(photoUrl) {
     const button = document.createElement('button');
     button.className = 'btn btn-primary';
     button.innerText = 'Создать';
-    button.addEventListener('click', async function () {
+    divCard.addEventListener('click', async function() {
         await putOnCanvas(photoUrl);
         if (window.pageYOffset > 0) {
             window.scrollBy(0, -window.pageYOffset);
