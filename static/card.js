@@ -1,5 +1,5 @@
 async function generateCard() {
-    let UrlToImage = await getPhotoUrl();
+    const UrlToImage = await getPhotoUrl();
     const cardBlock = document.getElementById('cardBlock');
     const divCard = document.createElement('div');
     divCard.className = 'card text-white bg-dark mb-3';
@@ -12,7 +12,7 @@ async function generateCard() {
     const h = document.createElement('h5');
     h.className = 'card-title';
 
-    let imageName = await getPhotoName(UrlToImage)
+    const imageName = await getPhotoName(UrlToImage);
 
     h.innerText = imageName;
     const button = document.createElement('button');
@@ -33,12 +33,14 @@ async function generateCard() {
 }
 
 async function getListPhotosNames() {
-    let allPhotos = await fetch('./photos')
-    let data = await allPhotos.text()
-    data = data.slice(2, -2)  // убрали  [] из строки и пробелы
-    data = data.replaceAll('"', '')  // убрали " из строки, получили только слова и ,
-    data = data.split(',')  // создали массив, ура
-    return data
+    let response = await fetch('./photos');
+    if (response.ok) {
+        const allPhotos = await response.json();
+        console.log(allPhotos);
+        return allPhotos;
+    } else {
+        return [];
+    }
 }
 
 async function putOnCanvas(UrlToImg) {
@@ -51,20 +53,16 @@ async function putOnCanvas(UrlToImg) {
 }
 
 async function getPhotoUrl() {
-    let UrlToImage = await getListPhotosNames()
-    let allCardsCount = document.querySelectorAll('.card')
-    let currentCardIndex = allCardsCount.length % UrlToImage.length
-    let neededImage = UrlToImage[currentCardIndex]
-    neededImage = '/photo/' + neededImage
-    return neededImage
+    const UrlToImage = await getListPhotosNames();
+    const allCardsCount = document.querySelectorAll('.card');
+    const currentCardIndex = allCardsCount.length % UrlToImage.length;
+    return '/photo/' + UrlToImage[currentCardIndex];
 }
 
 async function getPhotoName(UrlToImage) {
-    let imageName = UrlToImage.split('/');
-    imageName = imageName[imageName.length - 1]
-    imageName = imageName.split('.');
-    imageName = imageName[0]
-    return imageName
+    const path = UrlToImage.split('/');
+    return path[path.length - 1]
+        .split('.')[0];
 }
 
 async function getBasicPictures(n) {

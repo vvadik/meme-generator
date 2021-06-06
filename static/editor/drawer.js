@@ -25,13 +25,10 @@ function drawImage() {
     }
 }
 
-function drawString(ctx, text, posX, posY, textColor, font, fontSize) {
-    const lines = text.split("\n");
-    if (!font) font = "'serif'";
-    if (!fontSize) fontSize = 16;
-    if (!textColor) textColor = '#000000';
+function drawString(ctx, text, posX, posY, textColor = '#000000', font = "'serif'", fontSize = 16) {
+    const lines = text.split('\n');
     ctx.save();
-    ctx.font = fontSize + "px " + font;
+    ctx.font = fontSize + 'px ' + font;
     ctx.fillStyle = textColor;
     ctx.translate(posX, posY);
     for (let i = 0; i < lines.length; i++) {

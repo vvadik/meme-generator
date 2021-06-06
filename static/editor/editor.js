@@ -52,7 +52,6 @@ async function main() {
     const canvas = getCanvas();
 
     canvas.addEventListener('dblclick', function (event) {
-        console.log(event);
         createMemeTextArea(event.x, event.y);
     });
 }
