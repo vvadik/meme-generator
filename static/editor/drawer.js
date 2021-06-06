@@ -13,7 +13,6 @@ function drawImage() {
         const clientRects = context.canvas.getClientRects()[0];
         const scaleX = context.canvas.width / clientRects.width;
         const scaleY = context.canvas.height / clientRects.height;
-        console.log(`${scaleX} ${scaleY}`);
 
         x -= context.canvas.offsetLeft;
         y -= context.canvas.offsetTop;

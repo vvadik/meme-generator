@@ -10,7 +10,6 @@ function createMemeTextArea(offsetX, offsetY) {
     const newTextArea = document.createElement('textarea');
     newTextArea.className = 'userText';
     newTextArea.autofocus = true;
-    console.log(`x: ${offsetX} : ${offsetY}`);
 
     div.style.left = offsetX.toString() + 'px';
     div.style.top = offsetY.toString() + 'px';
@@ -54,8 +53,13 @@ function createSizeSelector(minSize, maxSize, defaultSize = 16) {
     input.step = '1';
     input.name = 'textSize';
     input.value = defaultSize.toString();
+    input.addEventListener('change',function (event) {
+        onChangeRange(event);
+        const parentDiv = div.parentElement;
+        const textarea = parentDiv.querySelector('.userText');
+        textarea.style.fontSize = event.target.value + 'px';
+    });
     input.addEventListener('input', onChangeRange);
-    input.addEventListener('change', onChangeRange);
 
     div.appendChild(input);
     div.appendChild(label);
@@ -67,6 +71,12 @@ function createColorPicker(defaultColor = 'black') {
     const div = document.createElement('div');
     div.className = 'colorPicker';
 
+    const onChangeColor = function (event) {
+        const parentDiv = div.parentElement;
+        const textarea = parentDiv.querySelector('.userText');
+        textarea.style.color = event.target.value;
+    }
+
     const label = document.createElement('label');
     label.className = 'colorLabel';
     label.htmlFor = 'color';
@@ -76,6 +86,8 @@ function createColorPicker(defaultColor = 'black') {
     input.type = 'color';
     input.name = 'color';
     input.value = defaultColor;
+
+    input.addEventListener('input', onChangeColor);
 
     div.appendChild(input);
     div.appendChild(label);

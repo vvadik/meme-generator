@@ -1,25 +1,24 @@
-async function generateCard() {
-    const UrlToImage = await getPhotoUrl();
+function generateCard(photoUrl) {
     const cardBlock = document.getElementById('cardBlock');
     const divCard = document.createElement('div');
     divCard.className = 'card text-white bg-dark mb-3';
     const img = document.createElement('img');
-    img.src = UrlToImage;
+    img.src = photoUrl;
     img.className = 'card-img-top';
-    img.alt = UrlToImage;
+    img.alt = photoUrl;
     const divCardBody = document.createElement('div');
     divCardBody.className = 'card-body';
     const h = document.createElement('h5');
     h.className = 'card-title';
 
-    const imageName = await getPhotoName(UrlToImage);
+    const imageName = getPhotoName(photoUrl);
 
     h.innerText = imageName;
     const button = document.createElement('button');
     button.className = 'btn btn-primary';
     button.innerText = 'Create my own';
     button.addEventListener('click', async function () {
-        await putOnCanvas(UrlToImage);
+        await putOnCanvas(photoUrl);
         if (window.pageYOffset > 0) {
             window.scrollBy(0, -window.pageYOffset);
         }
@@ -35,9 +34,7 @@ async function generateCard() {
 async function getListPhotosNames() {
     let response = await fetch('./photos');
     if (response.ok) {
-        const allPhotos = await response.json();
-        console.log(allPhotos);
-        return allPhotos;
+        return await response.json();
     } else {
         return [];
     }
@@ -52,21 +49,15 @@ async function putOnCanvas(UrlToImg) {
     context.drawImage(image, 0, 0);
 }
 
-async function getPhotoUrl() {
-    const UrlToImage = await getListPhotosNames();
-    const allCardsCount = document.querySelectorAll('.card');
-    const currentCardIndex = allCardsCount.length % UrlToImage.length;
-    return '/photo/' + UrlToImage[currentCardIndex];
-}
-
-async function getPhotoName(UrlToImage) {
+function getPhotoName(UrlToImage) {
     const path = UrlToImage.split('/');
     return path[path.length - 1]
         .split('.')[0];
 }
 
-async function getBasicPictures(n) {
-    for (let i = 0; i < n; i++) {
-        await generateCard();
+async function getBasicPictures() {
+    const photos = await getListPhotosNames();
+    for (const photoUrl of photos) {
+        generateCard('/photo/' + photoUrl);
     }
 }
